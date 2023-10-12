@@ -1,0 +1,64 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "anyof": [
+        {"required": ["username"]},
+        {"required": ["first_name"]},
+        {"required": ["last_name"]},
+        {"required": ["email"]}
+    ],
+    "allOf":[
+        {"not": {"required": ["password"]}},
+        {"not": {"required": ["admin"]}}
+    ],
+    "properties": {
+        "username": {
+            "type": "string",
+            "default": "",
+            "title": "The username Schema",
+            "examples": [
+                "Jayson"
+            ]
+        },
+        "first_name": {
+            "type": "string",
+            "default": "",
+            "title": "The first_name Schema",
+            "examples": [
+                "Jayson"
+            ]
+        },
+        "last_name": {
+            "type": "string",
+            "default": "",
+            "title": "The last_name Schema",
+            "examples": [
+                "Bigalo"
+            ]
+        },
+        "email": {
+            "type": "string",
+            "default": "",
+            "title": "The email Schema",
+            "examples": [
+                "Jayson.Bigalo@gmail.com"
+            ]
+        },
+        "password":{
+            "type":"string"
+        },
+        "admin":{
+            "type": "bool"
+        }
+    },
+    "examples": [{
+        "username": "Jayson",
+        "first_name": "Jayson",
+        "last_name": "Bigalo",
+        "email": "Jayson.Bigalo@gmail.com",
+        "_token": {}
+    }]
+}
